@@ -9,7 +9,7 @@ entity BO is
        Sel   : in  STD_LOGIC_VECTOR(1 downto 0);
 		 V : in STD_LOGIC_VECTOR (N-1 downto 0);
 		 R1, R2 : in STD_LOGIC_VECTOR (N-1 downto 0); -- na pratica vamo usar 3 bits pra ter espaço nas chaves do fpga
-       reset : in STD_LOGIC;
+       reset_bo : in STD_LOGIC;
 		 clock : in STD_LOGIC;
 		 Acumulador : out STD_LOGIC_VECTOR(N-1 downto 0);
 		 over_flag : out STD_LOGIC
@@ -54,7 +54,7 @@ begin
 		)
 		port map(
 			clk => clock ,
-			rst => reset,
+			rst => reset_bo,
 			en  => not flag,
 			D  => soma_out,
 			Q  => reg_out
