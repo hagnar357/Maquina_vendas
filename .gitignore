@@ -1,0 +1,80 @@
+############################
+# Quartus Prime
+############################
+
+# Diretórios gerados
+db/
+incremental_db/
+output_files/
+simulation/
+timing/
+
+# Arquivos temporários
+*.rpt
+*.chg
+*.eqn
+*.fit.summary
+*.fit.rpt
+*.map.rpt
+*.map.summary
+*.sta.rpt
+*.sta.summary
+*.pin
+*.sof
+*.pof
+*.jdi
+*.qws
+*.qdf
+*.qws
+*.smsg
+*.done
+*.bak
+*.tmp
+
+# Cache e logs
+*.log
+*.jic
+*.qpf.autosave
+*.qsf.autosave
+
+############################
+# ModelSim / Questa
+############################
+work/
+vsim.wlf
+transcript
+*.mpf
+*.ini
+
+############################
+# Arquivos do sistema
+############################
+.DS_Store
+Thumbs.db
+
+############################
+# Editor / IDE
+############################
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+
+############################
+# Python / Jupyter (se usar)
+############################
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+############################
+# Arquivos que DEVEM ficar
+############################
+!*.vhd
+!*.vhdl
+!*.qsf
+!*.qpf
+!*.tcl
+!*.sdc
+!README.md
