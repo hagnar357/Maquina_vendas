@@ -24,7 +24,7 @@ entity BC is
 		nt      : out std_logic;
 		vt      : out std_logic_vector(N-1 downto 0)
 		);
-	end entity;
+	end BC;
  
 architecture controle of BC is
 	type state_t is(
@@ -114,7 +114,7 @@ begin
 							f2 <= '1';
 						end if;
 						
-						if Acumulador /= (others=>'0') then
+						if Acumulador /= "0000" then
 							next_state <= TROCO;
 						else
 							 next_state <= CLEAR;

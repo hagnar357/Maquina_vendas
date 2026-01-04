@@ -1,7 +1,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity Registrador_N is
+entity registrador is
     generic (
         N : integer := 4   -- largura do registrador
     );
@@ -12,9 +12,9 @@ entity Registrador_N is
         D     : in  STD_LOGIC_VECTOR(N-1 downto 0); -- entrada paralela
         Q     : out STD_LOGIC_VECTOR(N-1 downto 0)  -- saída paralela
     );
-end Registrador_N;
+end registrador;
 
-architecture RTL of Registrador_N is
+architecture RTL of registrador is
     signal reg : STD_LOGIC_VECTOR(N-1 downto 0);
 
 begin

@@ -23,9 +23,11 @@ architecture opera of BO is
 	 signal reg_out : STD_LOGIC_VECTOR(N-1 downto 0);
 	 signal soma_out : STD_LOGIC_VECTOR(N-1 downto 0);
 	 signal flag: STD_LOGIC;
+	 signal en_s : std_logic;
 	 
 begin
-
+		
+	 en_s <= not flag;
 	 U_MUX : entity work.Mux_4x1
         generic map (
             N => N
@@ -55,7 +57,7 @@ begin
 		port map(
 			clk => clock ,
 			rst => reset_bo,
-			en  => not flag,
+			en  => en_s,
 			D  => soma_out,
 			Q  => reg_out
 			);
