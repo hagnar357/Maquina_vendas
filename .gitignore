@@ -30,6 +30,8 @@ timing/
 *.done
 *.bak
 *.tmp
+*.qsf
+*.qpf
 
 # Cache e logs
 *.log
