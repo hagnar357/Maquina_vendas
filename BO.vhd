@@ -23,19 +23,7 @@ architecture opera of BO is
     signal flag: STD_LOGIC;
     signal en_s : std_logic;
     
-begin
-    
-    process(flag, Sel)
-    begin
-        if Sel(1) = '0' then
-            en_s <= not flag;
-            over_flag <= flag;
-        else
-            en_s <= flag;
-            over_flag <= not flag;
-        end if;
-    end process;
-
+	begin
     U_MUX : entity work.Mux_4x1
         generic map (
             N => N
@@ -57,7 +45,7 @@ begin
                 Resultado  => soma_out,
                 Carry_Out_Final => flag
         );
-        
+    
     u_REG : entity work.registrador
         generic map(
             N => N
@@ -70,6 +58,8 @@ begin
             Q  => reg_out
             );
             
-    Acumulador <= reg_out;
+	Acumulador <= reg_out;
+	en_s <= not flag;
+	over_flag <= flag;
 
 end opera;

@@ -31,6 +31,7 @@ architecture controle of BC is
 		IDLE,
 		ADD,
 		BUY,
+		CHECK,
 		DISPENSER,
 		TROCO,
 		CLEAR
@@ -102,6 +103,9 @@ begin
 					else
 						Sel <= "11";
 					end if;
+					next_state <= DISPENSER;
+					
+				when CHECK =>
 					next_state <= DISPENSER;
 					
 				when DISPENSER =>

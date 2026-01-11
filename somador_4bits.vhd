@@ -52,6 +52,6 @@ begin
         );
     end generate;
 
-    Carry_Out_Final <= Cadeia_Carry(4);
+    Carry_Out_Final <= Cadeia_Carry(4) XOR Seletor_Op;
 
 end Estrutura;
