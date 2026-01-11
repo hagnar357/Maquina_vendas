@@ -22,6 +22,7 @@ architecture opera of BO is
     signal soma_out : STD_LOGIC_VECTOR(N-1 downto 0);
     signal flag: STD_LOGIC;
     signal en_s : std_logic;
+
     
 	begin
     U_MUX : entity work.Mux_4x1
@@ -57,7 +58,7 @@ architecture opera of BO is
             D  => soma_out,
             Q  => reg_out
             );
-            
+
 	Acumulador <= reg_out;
 	en_s <= not flag;
 	over_flag <= flag;

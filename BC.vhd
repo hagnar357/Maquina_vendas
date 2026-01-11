@@ -39,6 +39,7 @@ architecture controle of BC is
 	
 	signal state, next_state : state_t;
 	signal product : std_logic; -- '0' => produto 1, '1' => produto 2
+	signal last_flag: std_logic;
 	
 begin
 	process(clock)
@@ -64,6 +65,7 @@ begin
 					product <= '1';
 				end if;
 			end if;
+			last_flag<=over_flag;
 		end if;
 	end process;
 	
@@ -105,11 +107,8 @@ begin
 					end if;
 					next_state <= DISPENSER;
 					
-				when CHECK =>
-					next_state <= DISPENSER;
-					
 				when DISPENSER =>
-					if over_flag='1' then
+					if (over_flag='1') or (last_flag='1') then
 						next_state <= IDLE;
 					else 
 						if product = '0' then
