@@ -15,7 +15,7 @@ entity somador_Nbits is
 end somador_Nbits;
 
 architecture Estrutura of somador_Nbits is
-   
+
     component somador_completo
         Port ( 
 			A, B, Carry_In : in STD_LOGIC;
