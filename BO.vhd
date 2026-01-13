@@ -38,7 +38,8 @@ architecture opera of BO is
             Sel_out => mux_out
         );
     
-    U_SOMA : entity work.somador_4bits
+    U_SOMA : entity work.somador_Nbits
+		generic map(N => N)
         port map(
                 Operando_A => reg_out,
                 Operando_B => mux_out,

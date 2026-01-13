@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity TOP is 
 	generic(
-		N : integer := 4
+		N : integer := 8
 	);
 	
 	port(

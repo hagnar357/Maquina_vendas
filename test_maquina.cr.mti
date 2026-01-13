@@ -1,14 +1,4 @@
-E:/phi/Maquina_vendas/TOP.vhd {1 {vcom -work work -2002 -explicit -stats=none E:/phi/Maquina_vendas/TOP.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity TOP
--- Compiling architecture rtl of TOP
--- Loading entity BC
--- Loading entity BO
-
-} {} {}} E:/phi/Maquina_vendas/somador_completo.vhd {1 {vcom -work work -2002 -explicit -stats=none E:/phi/Maquina_vendas/somador_completo.vhd
+E:/phi/Maquina_vendas/somador_completo.vhd {1 {vcom -work work -2002 -explicit -stats=none E:/phi/Maquina_vendas/somador_completo.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -34,25 +24,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling architecture sim of tb_TOP
 -- Loading entity TOP
 
-} {} {}} E:/phi/Maquina_vendas/BO.vhd {1 {vcom -work work -2002 -explicit -stats=none E:/phi/Maquina_vendas/BO.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity BO
--- Compiling architecture opera of BO
--- Loading entity Mux_4x1
--- Loading entity somador_4bits
--- Loading entity registrador
-
-} {} {}} E:/phi/Maquina_vendas/BC.vhd {1 {vcom -work work -2002 -explicit -stats=none E:/phi/Maquina_vendas/BC.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Compiling entity BC
--- Compiling architecture controle of BC
-
 } {} {}} E:/phi/Maquina_vendas/Complemento2.vhd {1 {vcom -work work -2002 -explicit -stats=none E:/phi/Maquina_vendas/Complemento2.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
@@ -61,13 +32,13 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling entity Complemento2
 -- Compiling architecture Comportamento of Complemento2
 
-} {} {}} E:/phi/Maquina_vendas/somador_4bits.vhd {1 {vcom -work work -2002 -explicit -stats=none E:/phi/Maquina_vendas/somador_4bits.vhd
+} {} {}} E:/phi/Maquina_vendas/BC.vhd {1 {vcom -work work -2002 -explicit -stats=none E:/phi/Maquina_vendas/BC.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
--- Compiling entity somador_4bits
--- Compiling architecture Estrutura of somador_4bits
+-- Compiling entity BC
+-- Compiling architecture controle of BC
 
 } {} {}} E:/phi/Maquina_vendas/registrador.vhd {1 {vcom -work work -2002 -explicit -stats=none E:/phi/Maquina_vendas/registrador.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020

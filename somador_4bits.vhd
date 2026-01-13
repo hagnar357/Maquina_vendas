@@ -1,17 +1,20 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity somador_4bits is
+entity somador_Nbits is
+	 generic (
+        N : integer := 4   -- largura do barramento
+    );
     Port ( 
-        Operando_A      : in  STD_LOGIC_VECTOR (3 downto 0);
-        Operando_B      : in  STD_LOGIC_VECTOR (3 downto 0);
+        Operando_A      : in  STD_LOGIC_VECTOR (N-1 downto 0);
+        Operando_B      : in  STD_LOGIC_VECTOR (N-1 downto 0);
         Seletor_Op      : in  STD_LOGIC; -- 0|soma e 1|subtração
-        Resultado       : out STD_LOGIC_VECTOR (3 downto 0);
+        Resultado       : out STD_LOGIC_VECTOR (N-1 downto 0);
         Carry_Out_Final : out STD_LOGIC
     );
-end somador_4bits;
+end somador_Nbits;
 
-architecture Estrutura of somador_4bits is
+architecture Estrutura of somador_Nbits is
    
     component somador_completo
         Port ( 
@@ -21,28 +24,35 @@ architecture Estrutura of somador_4bits is
     end component;
 
     component Complemento2
-        Port ( Dado_B_Original : in STD_LOGIC_VECTOR (3 downto 0);
-               Modo_Subtracao  : in STD_LOGIC;
-               Dado_B_Ajustado : out STD_LOGIC_VECTOR (3 downto 0));
+		 generic (
+			  N : integer := 4
+		 );
+	  Port ( Dado_B_Original : in STD_LOGIC_VECTOR (N-1 downto 0);
+				Modo_Subtracao  : in STD_LOGIC;
+				Dado_B_Ajustado : out STD_LOGIC_VECTOR (N-1 downto 0));
     end component;
 	 
-    signal Cadeia_Carry : STD_LOGIC_VECTOR (4 downto 0); 
-    signal Fio_B_Processado : STD_LOGIC_VECTOR (3 downto 0); -- b mudado ou não dependendo do modo escolhido 
+    signal Cadeia_Carry : STD_LOGIC_VECTOR (N downto 0); 
+    signal Fio_B_Processado : STD_LOGIC_VECTOR (N-1 downto 0); -- b mudado ou não dependendo do modo escolhido 
 
 begin
 
     -- tratamos o b pra a conta
-    Instancia_Inversor: Complemento2 port map (
+    Instancia_Inversor: Complemento2 
+	     generic map (
+        N => N
+		)
+		port map (
         Dado_B_Original => Operando_B,
         Modo_Subtracao  => Seletor_Op, 
         Dado_B_Ajustado => Fio_B_Processado
-    );
+		);
 
    
     Cadeia_Carry(0) <= Seletor_Op; -- +1 comp2
 
     
-    Gerador_Somadores: for i in 0 to 3 generate
+    Gerador_Somadores: for i in 0 to N-1 generate
         Instancia_Somador_Bit: Somador_completo port map (
             A  => Operando_A(i),
             B  => Fio_B_Processado(i),
@@ -52,6 +62,6 @@ begin
         );
     end generate;
 
-    Carry_Out_Final <= Cadeia_Carry(4) XOR Seletor_Op;
+    Carry_Out_Final <= Cadeia_Carry(N) XOR Seletor_Op;
 
 end Estrutura;
